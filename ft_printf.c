@@ -13,6 +13,7 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include "libft.h"
+#include "ft_printf.h"
 
 static int	print(int c, va_list ap);
 
@@ -42,13 +43,13 @@ static int	print(int c, va_list ap)
 	else if (c == 'p')
 		return (print_ptr(va_arg(ap, uintptr_t)));
 	else if (c == 'd' || c == 'i')
-		return (print_int(va_arg(ap, int), "01232456789"));
+		return (print_int(va_arg(ap, int), "DECIMAL"));
 	else if (c == 'u')
-		return (print_uint(va_arg(ap, unsigned int), "0123456789"));
+		return (print_uint(va_arg(ap, unsigned int), "DECIMAL"));
 	else if (c == 'x')
-		return (print_uint(va_arg(ap, unsigned int), "0123456789abcdef"));
+		return (print_uint(va_arg(ap, unsigned int), "HEX_LOWER"));
 	else if (c == 'X')
-		return (print_uint(va_arg(ap, unsigned int), "0123456789ABCDEF"));
+		return (print_uint(va_arg(ap, unsigned int), "HEX_UPPER"));
 	else if (c == '%')
 		return (ft_putchar_fd('%', 1));
 	return (-1);
@@ -66,7 +67,7 @@ static int	parse(const char *format, va_list ap)
 	{
 		if (*format == '%')
 		{
-			if (ft_memchr("cspdiuxX%", *(format + 1), 9))
+			if (ft_memchr(FORMATS, *(format + 1), ft_strlen(FORMATS)))
 				write_ret = print(*(++format), ap);
 			else
 				write_ret = print_invalid(*(++format), &invalid);

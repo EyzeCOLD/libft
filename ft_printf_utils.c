@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <stdint.h>
 #include "libft.h"
+#include "ft_printf.h"
 
 static int	print_uint_recur(uintptr_t i, const char *base, size_t b_len)
 {
@@ -70,7 +71,7 @@ int	print_ptr(uintptr_t ptr)
 		return (ft_putstr_fd("(nil)", 1));
 	if (ft_putstr_fd("0x", 1) < 0)
 		return (-1);
-	ret = print_uint(ptr, "0123456789abcdef");
+	ret = print_uint(ptr, HEX_LOWER);
 	if (ret < 0)
 		return (-1);
 	return (2 + ret);

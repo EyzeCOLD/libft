@@ -21,6 +21,9 @@ SRCS = \
 	ft_lstlast.c	ft_lstmap.c		ft_lstnew.c	\
 	ft_lstsize.c	ft_printf.c		ft_printf_utils.c
 
+HEADERS = \
+	libft.h	ft_printf.h
+
 OBJS = $(SRCS:.c=.o)
 
    ################
@@ -42,7 +45,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME) $?
 
-%.o: %.c $(NAME:.a=.h)
+debug: CFLAGS += -g
+
+debug: all
+
+%.o: %.c $(HEADERS)
 	$(CC) -c $(CFLAGS) $<
 
 clean:
@@ -52,4 +59,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: debug all clean fclean re

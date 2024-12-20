@@ -43,13 +43,13 @@ static int	print(int c, va_list ap)
 	else if (c == 'p')
 		return (print_ptr(va_arg(ap, uintptr_t)));
 	else if (c == 'd' || c == 'i')
-		return (print_int(va_arg(ap, int), "DECIMAL"));
+		return (print_int(va_arg(ap, int), DECIMAL));
 	else if (c == 'u')
-		return (print_uint(va_arg(ap, unsigned int), "DECIMAL"));
+		return (print_uint(va_arg(ap, unsigned int), DECIMAL));
 	else if (c == 'x')
-		return (print_uint(va_arg(ap, unsigned int), "HEX_LOWER"));
+		return (print_uint(va_arg(ap, unsigned int), HEX_LOWER));
 	else if (c == 'X')
-		return (print_uint(va_arg(ap, unsigned int), "HEX_UPPER"));
+		return (print_uint(va_arg(ap, unsigned int), HEX_UPPER));
 	else if (c == '%')
 		return (ft_putchar_fd('%', 1));
 	return (-1);

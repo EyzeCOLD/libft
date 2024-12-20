@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-
 static	int	atoi2_inner(const char *a, int *i, int neg)
 {
 	int num;

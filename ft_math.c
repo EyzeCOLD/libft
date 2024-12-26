@@ -6,7 +6,7 @@
 /*   By: juaho <juaho@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:46:20 by juaho             #+#    #+#             */
-/*   Updated: 2024/12/26 11:50:13 by juaho            ###   ########.fr       */
+/*   Updated: 2024/12/26 13:29:58 by juaho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_abs(int n)
 	return (n);
 }
 
-int ft_min(int n1, int n2)
+int	ft_min(int n1, int n2)
 {
 	if (n1 < n2)
 		return (n1);

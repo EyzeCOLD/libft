@@ -6,7 +6,7 @@
 /*   By: juaho <juaho@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:56:24 by juaho             #+#    #+#             */
-/*   Updated: 2024/11/20 15:47:06 by juaho            ###   ########.fr       */
+/*   Updated: 2024/12/26 11:51:23 by juaho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -69,5 +69,9 @@ int		ft_printf(const char *format, ...);
 int		print_int(int i, const char *base);
 int		print_uint(uintptr_t i, const char *base);
 int		print_ptr(uintptr_t ptr);
+int		ft_abs(int n);
+int		ft_min(int n1, int n2);
+int		ft_max(int n1, int n2);
+int		ft_pow(int n, unsigned int p);
 
 #endif

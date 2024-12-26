@@ -20,7 +20,7 @@ SRCS = \
 	ft_lstdelone.c	ft_lstiter.c	ft_lstadd_back.c \
 	ft_lstlast.c	ft_lstmap.c		ft_lstnew.c	\
 	ft_lstsize.c	ft_printf.c		ft_printf_utils.c \
-	ft_atoi2.c
+	ft_atoi2.c		ft_math.c
 
 HEADERS = \
 	libft.h	ft_printf.h

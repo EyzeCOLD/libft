@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
+
 static	int	atoi2_inner(const char *a, int *i, int neg)
 {
-	int	num;
-	int	overflow;
+	long	num;
+	int		overflow;
 
 	num = 0;
 	overflow = 0;
@@ -21,17 +23,11 @@ static	int	atoi2_inner(const char *a, int *i, int neg)
 	{
 		num *= 10;
 		if (neg)
-		{
 			num -= *a - '0';
-			if (!overflow && num > 0)
-				overflow = 1;
-		}
 		else
-		{
 			num += *a - '0';
-			if (!overflow && num < 0)
-				overflow = 1;
-		}
+		if (!overflow && (num > INT_MAX || num < INT_MIN))
+			overflow = 1;
 		a++;
 	}
 	*i = num;

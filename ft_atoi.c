@@ -15,6 +15,7 @@
 int	ft_atoi(const char *nptr)
 {
 	long	ret;
+	int		ctoi;
 	int		sign;
 	int		ctoi;
 

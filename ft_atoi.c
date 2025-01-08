@@ -10,10 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
+
 int	ft_atoi(const char *nptr)
 {
 	long	ret;
 	int		sign;
+	int		ctoi;
 
 	ret = 0;
 	sign = 1;
@@ -27,9 +30,13 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		ret *= 10;
-		ret += *nptr - '0';
+		ctoi = sign * (*nptr - '0');
+		if (sign == 1 && ret > (LONG_MAX - ctoi) / 10)
+			return ((int) LONG_MAX);
+		if (sign == -1 && ret < (LONG_MIN - ctoi) / 10)
+			return ((int) LONG_MIN);
+		ret = ret * 10 + ctoi;
 		nptr++;
 	}
-	return (sign * ret);
+	return (ret);
 }

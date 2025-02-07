@@ -6,7 +6,7 @@
 /*   By: juaho <juaho@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:36:38 by juaho             #+#    #+#             */
-/*   Updated: 2024/12/02 17:12:51 by juaho            ###   ########.fr       */
+/*   Updated: 2025/02/05 10:54:56 by juaho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*get_next_line(int fd)
 		}
 		ret = append(ret, buf);
 		if (!ret)
-			return (NULL);
+			return (GNL_ERROR);
 		if (ret[ft_strlen(ret) - 1] == '\n')
 			return (ret);
 	}

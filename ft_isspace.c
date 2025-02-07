@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juaho <juaho@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 15:40:36 by juaho             #+#    #+#             */
-/*   Updated: 2024/12/02 16:33:39 by juaho            ###   ########.fr       */
+/*   Created: 2025/02/05 22:32:20 by juaho             #+#    #+#             */
+/*   Updated: 2025/02/05 22:32:22 by juaho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define GNL_ERROR (char *) -1
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
-#endif
+int	ft_isspace(int c)
+{
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}

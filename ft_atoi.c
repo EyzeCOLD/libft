@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juaho <juaho@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 15:38:11 by juaho             #+#    #+#             */
-/*   Updated: 2024/11/14 12:14:02 by juaho            ###   ########.fr       */
+/*   Created: 2025/02/05 22:18:21 by juaho             #+#    #+#             */
+/*   Updated: 2025/02/05 22:33:03 by juaho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -20,7 +21,7 @@ int	ft_atoi(const char *nptr)
 
 	ret = 0;
 	sign = 1;
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
+	while (ft_isspace(*nptr))
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{

@@ -36,7 +36,7 @@ char	*get_next_line(int fd)
 		}
 		ret = append(ret, buf);
 		if (!ret)
-			return (GNL_ERROR);
+			break ;
 		if (ret[ft_strlen(ret) - 1] == '\n')
 			return (ret);
 	}

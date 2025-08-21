@@ -8,4 +8,4 @@ It was a very good exercise and made us think what really happens "under the hoo
 
 <p>The library acts as an utility belt during the later projects and I have expanded on it with my own functions that I felt would be generally useful. I will most likely keep expanding it for a while still, at least as long as we'll keep working with C.</p>
 
-<p>One part of the expansion of the library is also that I've merged a few other school projects in it, such as ft_printf and get_next_line.</p>
+<p>One part of the expansion of the library is also that I've merged a few other school projects into it, such as ft_printf and get_next_line.</p>
